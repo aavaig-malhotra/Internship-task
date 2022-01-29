@@ -30,7 +30,6 @@ const Style = styled.div`
         }
 
         .subtitles {
-            // width: 250px;
         }
 
         .tool {
@@ -255,10 +254,6 @@ export default function App({ defaultLang }) {
     }, [currentTime, subtitle]);
 
     useEffect(() => {
-        // vttToJson(main_subtitle).then((result) => {
-        //     console.log(result);
-        // });
-
         const localSubtitleString = window.localStorage.getItem('subtitle');
         const fetchSubtitle = () =>
             fetch('/sample.json')

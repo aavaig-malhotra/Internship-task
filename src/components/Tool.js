@@ -557,38 +557,6 @@ export default function Header({
         // player.crossOrigin = '*';
 
         if (data.video) {
-            // const ext = getExt(data.video);
-            // // console.log(props.player);
-            // const canPlayType = player.canPlayType(data.video);
-
-            // console.log(canPlayType === 'maybe');
-            // console.log(canPlayType === 'probably');
-
-            // setVideoFile(data.video);
-            // decodeAudioData(data.video);
-
-            // const vid = document.querySelector('video');
-            // vid.setAttribute('crossOrigin', '');
-
-            // waveform.decoder.destroy();
-            // waveform.drawer.update();
-            // waveform.seek(0);
-            // player.currentTime = 0;
-            // clearSubs();
-            // setSubtitle([
-            //     newSub({
-            //         start: '00:00:00.000',
-            //         end: '00:00:01.000',
-            //         text: t('SUB_TEXT'),
-            //     }),
-            // ]);
-            // setSubtitle(data.subtitles);
-            // player.setAttribute('crossOrigin', '*');
-            // if (canPlayType === 'maybe' || canPlayType === 'probably') {
-            //     setVideoFile(file);
-            //     decodeAudioData(file);
-            //     const url = URL.createObjectURL(new Blob([file]));
-            // waveform.decoder.destroy();
             waveform.drawer.update();
             waveform.seek(0);
             player.currentTime = 0;
@@ -601,14 +569,6 @@ export default function Header({
                 }),
             ]);
             player.src = data.video;
-
-            //     player.src = url;
-            // } else {
-            //     notify({
-            //         message: `${t('VIDEO_EXT_ERR')}: ${file.type || ext}`,
-            //         level: 'error',
-            //     });
-            // }
         }
 
         if (data.subtitles) {
@@ -641,15 +601,12 @@ export default function Header({
         <Style className="tool">
             <div className="top">
                 <div className="import">
-                    {/* <div className="open-video-btn-container btn"> */}
                     <div className="btn">
                         <Translate value="OPEN_VIDEO" />
                         <input className="file" type="file" onChange={onVideoChange} onClick={onInputClick} />
                     </div>
 
                     <div className="btn btn-yt" onClick={handleClickYT}>
-                        {/* <Translate value="OPEN_VIDEO" /> */}
-                        {/* <input className="file" type="file" onChange={onVideoChange} onClick={onInputClick} /> */}
                         <ImYoutube2 className="yt-icon" />
                     </div>
 
@@ -710,21 +667,7 @@ export default function Header({
                         <Translate value="TRANSLATE" />
                     </div>
                 </div>
-                {/* <div className="hotkey">
-                    <span>
-                        <Translate value="HOTKEY_01" />
-                    </span>
-                    <span>
-                        <Translate value="HOTKEY_02" />
-                    </span>
-                </div> */}
             </div>
-            {/* <div className="bottom">
-                <a href="https://online.aimu-app.com/">
-                    <div className="title">全新字幕编辑器来了，点击这里体验</div>
-                    <img src="/aimu.png" alt="aimu" />
-                </a>
-            </div> */}
         </Style>
     );
 }
